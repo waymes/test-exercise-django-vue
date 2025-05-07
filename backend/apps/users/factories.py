@@ -8,5 +8,6 @@ class UserFactory(factory.django.DjangoModelFactory):
     email = factory.Sequence(lambda n: f'user{n}@example.com')
     is_verified = True
     is_superuser = True
+    is_staff = True
     is_active = True
     password = factory.PostGenerationMethodCall('set_password', 'password123')
