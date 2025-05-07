@@ -5,10 +5,9 @@ services:
       target: dev
     env_file: ./backend/.env
     volumes:
-      - ./backend:/app
       - backend_static:/app/staticfiles
     ports:
-      - "8000:8000"
+      - '8000:8000'
     depends_on:
       - postgres
       - redis
@@ -18,10 +17,8 @@ services:
       context: ./frontend
       target: dev
     env_file: ./frontend/.env
-    volumes:
-      - ./frontend:/app
     ports:
-      - "5000:5000"
+      - '5000:5000'
     depends_on:
       - backend
 
